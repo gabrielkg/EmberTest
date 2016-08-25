@@ -1,0 +1,11 @@
+<div class="btn-group">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+    Dropdown
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+  {{#each model as |map|}}
+    <li><a href="#">{{map.name}}</a></li>
+  {{/each}}
+  </ul>
+</div>
