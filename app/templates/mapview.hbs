@@ -1,11 +1,15 @@
 <div class="btn-group">
   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-    Dropdown
+    Select map
     <span class="caret"></span>
   </button>
   <ul class="dropdown-menu" role="menu">
-  {{#each model as |map|}}
-    <li><a href="#">{{map.name}}</a></li>
+  {{#each model as |mymap|}}
+    {{#link-to "mapview.map" mymap.id tagName="li"}}
+      <a href>{{mymap.name}}</a>
+    {{/link-to}}
   {{/each}}
   </ul>
 </div>
+
+{{outlet}}

@@ -23,23 +23,9 @@ export default function() {
 
     http://www.ember-cli-mirage.com/docs/v0.2.x/shorthands/
   */
-  this.get('/maps', function() {
-    return {
-			data: [{
-        type: 'maps',
-        id: 1,
-        attributes: {
-          name: 'Chinese Spring x Renan',
-          size: 10
-        }
-      }, {
-        type: 'maps',
-        id: 2,
-        attributes: {
-          name: 'MAGIC CSIRO 8-way',
-          size: 41
-        }
-      }]
-    };
-  });
+  
+
+  this.get('/maps');
+  this.get('/maps/:id');
+  
 }
