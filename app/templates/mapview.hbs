@@ -5,9 +5,11 @@
   </button>
   <ul class="dropdown-menu" role="menu">
   {{#each model as |mymap|}}
-    {{#link-to "mapview.map" mymap.id tagName="li"}}
-      <a href>{{mymap.name}}</a>
+  <li>
+    {{#link-to "mapview.map" mymap.id}}
+      {{mymap.name}}
     {{/link-to}}
+  </li>
   {{/each}}
   </ul>
 </div>

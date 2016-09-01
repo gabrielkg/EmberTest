@@ -9,7 +9,7 @@ Router.map(function() {
   this.route('about');
   this.route('mapview', function() {
     this.route('map', { path: "map/:map_id" });
-    this.route('map', { path: "map/:map_id/*maps" });
+    this.route('maps', { path: "maps/:map_id/*maps" });
   });
   this.route('markers');
 });
