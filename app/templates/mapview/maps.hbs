@@ -1,3 +1,20 @@
-Map: {{model.name}}
+<ul>
+{{#each model.markers as |marker|}}
+<li>{{marker.name}}, {{marker.cM}}</li>
+{{/each}}
+</ul>
+
+Maps to align:
+
+<ul>
+{{#each model as |m|}}
+<li>{{m.name}}</li>
+  <ul>
+  {{#each m.markers as |marker|}}
+  <li>{{marker.name}}: {{marker.cM}}</li>
+  {{/each}}
+  </ul>
+{{/each}}
+</ul>
 
 {{outlet}}
