@@ -1,3 +1,9 @@
 Map: {{model.name}}
 
+<ul>
+{{#each model.markers as |marker|}}
+<li>{{marker.name}}, {{marker.cM}}</li>
+{{/each}}
+</ul>
+
 {{outlet}}
