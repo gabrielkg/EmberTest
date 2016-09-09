@@ -5,6 +5,8 @@ export default Ember.Route.extend({
     console.log("params to mapview route:");
     console.log(params);
     // Get all available maps.
-    return this.get('store').findAll('map');
+    var maps = this.get('store').findAll('map');
+    this.controllerFor("mapview").set("availableMaps", maps);
+    return maps;
   }
 });
