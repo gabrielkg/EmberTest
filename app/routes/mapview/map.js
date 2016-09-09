@@ -2,6 +2,16 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 
+  actions: {
+    willTransition: function(transition) {
+      console.log(transition.targetName);
+      if(transition.targetName === 'mapview.index') {
+        this.controllerFor("mapview").set("selected", []);
+        console.log("going to mapview index route");
+      }
+    }
+  },
+
   parentController: Ember.computed( function() {
     return this.controllerFor('mapview');
   }),
