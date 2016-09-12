@@ -12,18 +12,14 @@ Map: {{model.name}}
     <span class="caret"></span>
   </button>
   <ul class="dropdown-menu" role="menu">
-  {{#each controllers.mapview.availableMaps as |mymap|}}
+  {{#each mapviewController.availableMaps as |mymap|}}
   <li>
-    {{#link-to "mapview.map" mymap}}
+    {{#link-to "mapview.maps" model.id mymap.id}}
       {{mymap.name}}
     {{/link-to}}
   </li>
   {{/each}}
   </ul>
 </div>
-
-Available maps: {{#each mapviewController.availableMaps as |map|}}
-{{map.name}}
-{{/each}}
 
 {{outlet}}
