@@ -3,7 +3,7 @@ import DS from 'ember-data';
 export default DS.Model.extend({
   name: DS.attr('string'),
   markers: DS.attr('marker'),
-  extraMaps: null,
+  extraMaps: [],
   mapLink: Ember.computed('extraMaps', function() {
     console.log("in map model:");
     console.log(this.get('extraMaps'));
@@ -12,7 +12,9 @@ export default DS.Model.extend({
       return this.get("id");
     }
     else {
-      retlist.pushObject(this.get("id"));
+      console.log("in map model retlist");
+      console.log(retlist);
+      retlist.push(this.get("id"));
       return retlist;
     }
   })

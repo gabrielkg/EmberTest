@@ -16,7 +16,15 @@ export default Ember.Route.extend({
       maplist.forEach(function(map) {
         console.log("in mapview route");
         console.log(params.mapsToView);
-        map.set('extraMaps', params.mapsToView);
+        var exMaps = [];
+        if (params.mapsToView) {
+          for (var i=0; i < params.mapsToView.length; i++) {
+            exMaps.push(params.mapsToView[i]);
+          }
+        }
+        console.log("setting " + map.id + " to");
+        console.log(exMaps);
+        map.set('extraMaps', exMaps);
       });
     });
     
